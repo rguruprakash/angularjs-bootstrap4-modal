@@ -1,0 +1,24 @@
+{
+  "name": "angularjs-bootstrap4-modal",
+  "homepage": "https://github.com/rguruprakash/angularjs-bootstrap4-modal",
+  "authors": [
+    "Guruprakash Rajakkannu <guruprakash.js@gmail.com>"
+  ],
+  "description": "Simple wrapper for Bootstarp 4 modal in Angular 1",
+  "main": "wrapper.js",
+  "keywords": [
+    "angularjs",
+    "bootstrap",
+    "bootstrap4",
+    "angular1",
+    "modal"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
