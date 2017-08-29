@@ -67,10 +67,13 @@
     }
     
     var close = function() {
+      var deferred = $q.defer();
       el.modal('hide');
       el.on('hidden.bs.modal', function (e) {
         el.remove();
+        deferred.resolve();
       });
+      return deferred.promise;
     }
     
     /**
@@ -80,8 +83,9 @@
      */
     var hide = function(data) {
       if(el && modalDeferred) {
-        close();
-        modalDeferred.resolve(data);
+        close().then(function() {
+          modalDeferred.resolve(data);
+        });
       }
     }
     
@@ -92,8 +96,9 @@
      */
     var cancel = function(data) {
       if(el && modalDeferred) {
-        close();
-        modalDeferred.reject(data);
+        close().then(function() {
+          modalDeferred.reject(data);
+        });
       }
     }
     
