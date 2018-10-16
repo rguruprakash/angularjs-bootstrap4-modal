@@ -68,11 +68,11 @@
     
     var close = function() {
       var deferred = $q.defer();
-      el.modal('hide');
       el.on('hidden.bs.modal', function (e) {
         el.remove();
         deferred.resolve();
       });
+      el.modal('hide');
       return deferred.promise;
     }
     
